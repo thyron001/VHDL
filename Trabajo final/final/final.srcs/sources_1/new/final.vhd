@@ -5,53 +5,54 @@ use IEEE.NUMERIC_STD.ALL;
 --use IEEE.std_logic_arith.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 
-
 entity final is
-  Port (clk_in : in std_logic;
-        eoc: in std_logic;
-        data_in: std_logic_vector(11 downto 0);
-        len_lpf: in std_logic_vector(1 downto 0);
-        data_out: out std_logic_vector(11 downto 0));
+  Port (clk_in : in std_logic;                   -- Señal de reloj
+        eoc: in std_logic;                       -- Señal de fin de conversión
+        data_in: std_logic_vector(11 downto 0);  -- Entrada de datos (12 bits)
+        len_lpf: in std_logic_vector(1 downto 0);-- Selector de longitud del filtro
+        data_out: out std_logic_vector(11 downto 0));-- Salida de datos filtrados (12 bits)
 end final;
 
 architecture Behavioral of final is
-type data_reg_type is  array(0 to 7) of STD_LOGIC_VECTOR(11 downto 0);
-signal sum : STD_LOGIC_VECTOR(15 downto 0); -- Para almacenar la suma de las muestras
-signal suma_int: integer:= 0;
-signal len : integer := 0;
+    -- Tipo de dato para el registro de desplazamiento que almacena las muestras de entrada
+    type tipo_arreglo_muestras is array(0 to 7) of STD_LOGIC_VECTOR(11 downto 0);
+    signal suma: STD_LOGIC_VECTOR(15 downto 0);   -- Señal para almacenar la suma de las muestras
+    signal promedio_int: integer := 0;            -- Señal para almacenar el promedio calculado
+    signal longitud_filtro : integer := 0;        -- Señal para almacenar la longitud del filtro
+    signal registro_muestras: tipo_arreglo_muestras; -- Registro de desplazamiento para almacenar muestras
 
-signal data_reg: data_reg_type;
 begin
-process(clk_in)
+    process(clk_in)
     begin
-     if rising_edge(clk_in) then
-        if eoc = '1' then
-            -- Shift register
-            for i in 7 downto 1 loop
-                data_reg(i) <= data_reg(i-1);
-            end loop;
-            data_reg(0) <= data_in;
-        end if;
-        -- Calculate the sum based on filter length
-        case len_lpf is
-            when "01" => -- Length 2
-                sum <= ("0000" & data_reg(0)) + ("0000" & data_reg(1));
-                len <= 2;
-            when "10" => -- Length 4
-                sum <= ("0000" & data_reg(0)) + ("0000" & data_reg(1)) + ("0000" & data_reg(2)) + ("0000" & data_reg(3));
-                len <= 4;
-            when "11" => -- Length 8
-                sum <= ("0000" & data_reg(0)) + ("0000" & data_reg(1)) + ("0000" & data_reg(2)) + ("0000" & data_reg(3)) +
-                       ("0000" & data_reg(4)) + ("0000" & data_reg(5)) + ("0000" & data_reg(6)) + ("0000" & data_reg(7));
-                len <= 8;
-            when others => -- Default to length 2
-                sum <= "0000" & data_in;
-                len <= 1;
-        end case;
+        if rising_edge(clk_in) then
+            if eoc = '1' then
+                -- Operación del registro de desplazamiento
+                for i in 7 downto 1 loop
+                    registro_muestras(i) <= registro_muestras(i-1);
+                end loop;
+                registro_muestras(0) <= data_in; -- Cargar nueva muestra en el registro de desplazamiento
+            end if;
 
-            -- Output the average
-            suma_int <= TO_INTEGER(unsigned(sum)) / len; -- División por el número de muestras
-            data_out <= std_logic_vector(to_unsigned(suma_int,12));
+            -- Calcular la suma de las muestras basado en la longitud del filtro seleccionada
+            case len_lpf is
+                when "01" => -- Longitud 2
+                    suma <= ("0000" & registro_muestras(0)) + ("0000" & registro_muestras(1));
+                    longitud_filtro <= 2;
+                when "10" => -- Longitud 4
+                    suma <= ("0000" & registro_muestras(0)) + ("0000" & registro_muestras(1)) + ("0000" & registro_muestras(2)) + ("0000" & registro_muestras(3));
+                    longitud_filtro <= 4;
+                when "11" => -- Longitud 8
+                    suma <= ("0000" & registro_muestras(0)) + ("0000" & registro_muestras(1)) + ("0000" & registro_muestras(2)) + ("0000" & registro_muestras(3)) +
+                           ("0000" & registro_muestras(4)) + ("0000" & registro_muestras(5)) + ("0000" & registro_muestras(6)) + ("0000" & registro_muestras(7));
+                    longitud_filtro <= 8;
+                when others => -- Por defecto a longitud 1 (sin promedio)
+                    suma <= "0000" & data_in;
+                    longitud_filtro <= 1;
+            end case;
+
+            -- Calcular el promedio de las muestras
+            promedio_int <= TO_INTEGER(unsigned(suma)) / longitud_filtro; -- División por el número de muestras
+            data_out <= std_logic_vector(to_unsigned(promedio_int, 12)); -- Salida de la muestra promediada
         end if;
     end process;
 end Behavioral;

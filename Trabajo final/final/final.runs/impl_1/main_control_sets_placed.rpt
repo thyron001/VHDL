@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu Jul 18 23:28:27 2024
+| Date         : Fri Jul 19 06:34:41 2024
 | Host         : Zephyrus running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file main_control_sets_placed.rpt
 | Design       : main
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              41 |           25 |
+| No           | No                    | No                     |              41 |           24 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              48 |           13 |
-| Yes          | No                    | No                     |             100 |           22 |
+| No           | Yes                   | No                     |              48 |           14 |
+| Yes          | No                    | No                     |             100 |           23 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               6 |            2 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -70,17 +70,17 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------+------------------------+--------------------------------+------------------+----------------+--------------+
-|    Clock Signal   |      Enable Signal     |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+-------------------+------------------------+--------------------------------+------------------+----------------+--------------+
-|  CLK_SD_OBUF_BUFG |                        | SD_i_1_n_0                     |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG    | contador_12[3]_i_1_n_0 |                                |                1 |              4 |         4.00 |
-|  clk_IBUF_BUFG    |                        | filtro_variable/len[3]_i_1_n_0 |                1 |              5 |         5.00 |
-|  clk_IBUF_BUFG    | contador_2M[5]_i_2_n_0 | contador_2M[5]_i_1_n_0         |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG    |                        | count[9]_i_1_n_0               |                3 |             10 |         3.33 |
-|  CLK_SD_OBUF_BUFG |                        | count_serial[31]_i_1_n_0       |                8 |             32 |         4.00 |
-|  clk_IBUF_BUFG    |                        |                                |               25 |             41 |         1.64 |
-|  clk_IBUF_BUFG    | your_adc/eoc_out       |                                |               21 |             96 |         4.57 |
-+-------------------+------------------------+--------------------------------+------------------+----------------+--------------+
++-------------------+------------------------+--------------------------------------------+------------------+----------------+--------------+
+|    Clock Signal   |      Enable Signal     |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  CLK_SD_OBUF_BUFG |                        | SD_i_1_n_0                                 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG    | contador_12[3]_i_1_n_0 |                                            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG    |                        | filtro_variable/longitud_filtro[3]_i_1_n_0 |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG    | contador_2M[5]_i_2_n_0 | contador_2M[5]_i_1_n_0                     |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG    |                        | count[9]_i_1_n_0                           |                3 |             10 |         3.33 |
+|  CLK_SD_OBUF_BUFG |                        | count_serial[31]_i_1_n_0                   |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG    |                        |                                            |               24 |             41 |         1.71 |
+|  clk_IBUF_BUFG    | your_adc/eoc_out       |                                            |               22 |             96 |         4.36 |
++-------------------+------------------------+--------------------------------------------+------------------+----------------+--------------+
 
 
