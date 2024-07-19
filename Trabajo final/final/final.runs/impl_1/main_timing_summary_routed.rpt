@@ -1,0 +1,1752 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Thu Jul 18 23:28:45 2024
+| Host         : Zephyrus running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file main_timing_summary_routed.rpt -pb main_timing_summary_routed.pb -rpx main_timing_summary_routed.rpx -warn_on_violation
+| Design       : main
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  196         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (196)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (1)
+4. checking unconstrained_internal_endpoints (361)
+5. checking no_input_delay (2)
+6. checking no_output_delay (3)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (196)
+--------------------------
+ There are 163 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+ There are 33 register/latch pins with no clock driven by root clock pin: clk_serial_reg/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (1)
+---------------------------------
+ There is 1 register/latch pin which need pulse_width check. (LOW)
+
+
+4. checking unconstrained_internal_endpoints (361)
+--------------------------------------------------
+ There are 361 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (2)
+------------------------------
+ There are 2 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (3)
+-------------------------------
+ There are 3 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                  364          inf        0.000                      0                  364           NA           NA                      NA                    NA  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay           364 Endpoints
+Min Delay           364 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        41.692ns  (logic 19.033ns (45.651%)  route 22.659ns (54.349%))
+  Logic Levels:           68  (CARRY4=52 FDRE=1 LUT2=7 LUT3=8)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          1.199    22.135    filtro_variable/suma_int_reg1[7]
+    SLICE_X36Y78         LUT3 (Prop_lut3_I0_O)        0.329    22.464 r  filtro_variable/suma_int[6]_i_17/O
+                         net (fo=1, routed)           0.000    22.464    filtro_variable/suma_int[6]_i_17_n_0
+    SLICE_X36Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.014 r  filtro_variable/suma_int_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    23.014    filtro_variable/suma_int_reg[6]_i_10_n_0
+    SLICE_X36Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.128 r  filtro_variable/suma_int_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    23.128    filtro_variable/suma_int_reg[6]_i_5_n_0
+    SLICE_X36Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.242 r  filtro_variable/suma_int_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    23.242    filtro_variable/suma_int_reg[6]_i_2_n_0
+    SLICE_X36Y81         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    23.492 r  filtro_variable/suma_int_reg[6]_i_1/CO[2]
+                         net (fo=26, routed)          1.743    25.234    filtro_variable/suma_int_reg1[6]
+    SLICE_X33Y79         LUT2 (Prop_lut2_I0_O)        0.313    25.547 r  filtro_variable/suma_int[5]_i_14/O
+                         net (fo=1, routed)           0.000    25.547    filtro_variable/suma_int[5]_i_14_n_0
+    SLICE_X33Y79         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    26.097 r  filtro_variable/suma_int_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    26.097    filtro_variable/suma_int_reg[5]_i_6_n_0
+    SLICE_X33Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.211 r  filtro_variable/suma_int_reg[5]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    26.211    filtro_variable/suma_int_reg[5]_i_2_n_0
+    SLICE_X33Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.325 r  filtro_variable/suma_int_reg[5]_i_1/CO[3]
+                         net (fo=28, routed)          1.576    27.901    filtro_variable/suma_int_reg1[5]
+    SLICE_X32Y78         LUT3 (Prop_lut3_I0_O)        0.124    28.025 r  filtro_variable/suma_int[4]_i_20/O
+                         net (fo=1, routed)           0.000    28.025    filtro_variable/suma_int[4]_i_20_n_0
+    SLICE_X32Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    28.575 r  filtro_variable/suma_int_reg[4]_i_13/CO[3]
+                         net (fo=1, routed)           0.000    28.575    filtro_variable/suma_int_reg[4]_i_13_n_0
+    SLICE_X32Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.689 r  filtro_variable/suma_int_reg[4]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    28.689    filtro_variable/suma_int_reg[4]_i_8_n_0
+    SLICE_X32Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.803 r  filtro_variable/suma_int_reg[4]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    28.803    filtro_variable/suma_int_reg[4]_i_3_n_0
+    SLICE_X32Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.917 r  filtro_variable/suma_int_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    28.917    filtro_variable/suma_int_reg[4]_i_2_n_0
+    SLICE_X32Y82         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    29.210 r  filtro_variable/suma_int_reg[4]_i_1/CO[0]
+                         net (fo=30, routed)          1.736    30.946    filtro_variable/suma_int_reg1[4]
+    SLICE_X31Y77         LUT2 (Prop_lut2_I0_O)        0.373    31.319 r  filtro_variable/suma_int[3]_i_17/O
+                         net (fo=1, routed)           0.000    31.319    filtro_variable/suma_int[3]_i_17_n_0
+    SLICE_X31Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    31.869 r  filtro_variable/suma_int_reg[3]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    31.869    filtro_variable/suma_int_reg[3]_i_9_n_0
+    SLICE_X31Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    31.983 r  filtro_variable/suma_int_reg[3]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    31.983    filtro_variable/suma_int_reg[3]_i_4_n_0
+    SLICE_X31Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.097 r  filtro_variable/suma_int_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    32.097    filtro_variable/suma_int_reg[3]_i_2_n_0
+    SLICE_X31Y80         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    32.275 r  filtro_variable/suma_int_reg[3]_i_1/CO[1]
+                         net (fo=32, routed)          1.780    34.055    filtro_variable/suma_int_reg1[3]
+    SLICE_X34Y76         LUT2 (Prop_lut2_I0_O)        0.329    34.384 r  filtro_variable/suma_int[2]_i_18/O
+                         net (fo=1, routed)           0.000    34.384    filtro_variable/suma_int[2]_i_18_n_0
+    SLICE_X34Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    34.917 r  filtro_variable/suma_int_reg[2]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    34.917    filtro_variable/suma_int_reg[2]_i_10_n_0
+    SLICE_X34Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.034 r  filtro_variable/suma_int_reg[2]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    35.034    filtro_variable/suma_int_reg[2]_i_5_n_0
+    SLICE_X34Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.151 r  filtro_variable/suma_int_reg[2]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    35.151    filtro_variable/suma_int_reg[2]_i_2_n_0
+    SLICE_X34Y79         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.252    35.403 r  filtro_variable/suma_int_reg[2]_i_1/CO[2]
+                         net (fo=34, routed)          1.903    37.306    filtro_variable/suma_int_reg1[2]
+    SLICE_X33Y72         LUT3 (Prop_lut3_I0_O)        0.310    37.616 r  filtro_variable/suma_int[1]_i_23/O
+                         net (fo=1, routed)           0.000    37.616    filtro_variable/suma_int[1]_i_23_n_0
+    SLICE_X33Y72         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    38.166 r  filtro_variable/suma_int_reg[1]_i_16/CO[3]
+                         net (fo=1, routed)           0.000    38.166    filtro_variable/suma_int_reg[1]_i_16_n_0
+    SLICE_X33Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.280 r  filtro_variable/suma_int_reg[1]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    38.280    filtro_variable/suma_int_reg[1]_i_11_n_0
+    SLICE_X33Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.394 r  filtro_variable/suma_int_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.009    38.403    filtro_variable/suma_int_reg[1]_i_6_n_0
+    SLICE_X33Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.517 r  filtro_variable/suma_int_reg[1]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    38.517    filtro_variable/suma_int_reg[1]_i_2_n_0
+    SLICE_X33Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.631 r  filtro_variable/suma_int_reg[1]_i_1/CO[3]
+                         net (fo=36, routed)          1.808    40.439    filtro_variable/suma_int_reg1[1]
+    SLICE_X32Y72         LUT3 (Prop_lut3_I0_O)        0.124    40.563 r  filtro_variable/suma_int[0]_i_23/O
+                         net (fo=1, routed)           0.000    40.563    filtro_variable/suma_int[0]_i_23_n_0
+    SLICE_X32Y72         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    41.113 r  filtro_variable/suma_int_reg[0]_i_16/CO[3]
+                         net (fo=1, routed)           0.000    41.113    filtro_variable/suma_int_reg[0]_i_16_n_0
+    SLICE_X32Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.227 r  filtro_variable/suma_int_reg[0]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    41.227    filtro_variable/suma_int_reg[0]_i_11_n_0
+    SLICE_X32Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.341 r  filtro_variable/suma_int_reg[0]_i_6/CO[3]
+                         net (fo=1, routed)           0.009    41.350    filtro_variable/suma_int_reg[0]_i_6_n_0
+    SLICE_X32Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    41.464 r  filtro_variable/suma_int_reg[0]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    41.464    filtro_variable/suma_int_reg[0]_i_2_n_0
+    SLICE_X32Y76         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228    41.692 r  filtro_variable/suma_int_reg[0]_i_1/CO[2]
+                         net (fo=1, routed)           0.000    41.692    filtro_variable/suma_int_reg1[0]
+    SLICE_X32Y76         FDRE                                         r  filtro_variable/suma_int_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        38.631ns  (logic 17.789ns (46.048%)  route 20.842ns (53.952%))
+  Logic Levels:           62  (CARRY4=47 FDRE=1 LUT2=7 LUT3=7)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          1.199    22.135    filtro_variable/suma_int_reg1[7]
+    SLICE_X36Y78         LUT3 (Prop_lut3_I0_O)        0.329    22.464 r  filtro_variable/suma_int[6]_i_17/O
+                         net (fo=1, routed)           0.000    22.464    filtro_variable/suma_int[6]_i_17_n_0
+    SLICE_X36Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.014 r  filtro_variable/suma_int_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    23.014    filtro_variable/suma_int_reg[6]_i_10_n_0
+    SLICE_X36Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.128 r  filtro_variable/suma_int_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    23.128    filtro_variable/suma_int_reg[6]_i_5_n_0
+    SLICE_X36Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.242 r  filtro_variable/suma_int_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    23.242    filtro_variable/suma_int_reg[6]_i_2_n_0
+    SLICE_X36Y81         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    23.492 r  filtro_variable/suma_int_reg[6]_i_1/CO[2]
+                         net (fo=26, routed)          1.743    25.234    filtro_variable/suma_int_reg1[6]
+    SLICE_X33Y79         LUT2 (Prop_lut2_I0_O)        0.313    25.547 r  filtro_variable/suma_int[5]_i_14/O
+                         net (fo=1, routed)           0.000    25.547    filtro_variable/suma_int[5]_i_14_n_0
+    SLICE_X33Y79         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    26.097 r  filtro_variable/suma_int_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    26.097    filtro_variable/suma_int_reg[5]_i_6_n_0
+    SLICE_X33Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.211 r  filtro_variable/suma_int_reg[5]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    26.211    filtro_variable/suma_int_reg[5]_i_2_n_0
+    SLICE_X33Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.325 r  filtro_variable/suma_int_reg[5]_i_1/CO[3]
+                         net (fo=28, routed)          1.576    27.901    filtro_variable/suma_int_reg1[5]
+    SLICE_X32Y78         LUT3 (Prop_lut3_I0_O)        0.124    28.025 r  filtro_variable/suma_int[4]_i_20/O
+                         net (fo=1, routed)           0.000    28.025    filtro_variable/suma_int[4]_i_20_n_0
+    SLICE_X32Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    28.575 r  filtro_variable/suma_int_reg[4]_i_13/CO[3]
+                         net (fo=1, routed)           0.000    28.575    filtro_variable/suma_int_reg[4]_i_13_n_0
+    SLICE_X32Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.689 r  filtro_variable/suma_int_reg[4]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    28.689    filtro_variable/suma_int_reg[4]_i_8_n_0
+    SLICE_X32Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.803 r  filtro_variable/suma_int_reg[4]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    28.803    filtro_variable/suma_int_reg[4]_i_3_n_0
+    SLICE_X32Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.917 r  filtro_variable/suma_int_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    28.917    filtro_variable/suma_int_reg[4]_i_2_n_0
+    SLICE_X32Y82         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    29.210 r  filtro_variable/suma_int_reg[4]_i_1/CO[0]
+                         net (fo=30, routed)          1.736    30.946    filtro_variable/suma_int_reg1[4]
+    SLICE_X31Y77         LUT2 (Prop_lut2_I0_O)        0.373    31.319 r  filtro_variable/suma_int[3]_i_17/O
+                         net (fo=1, routed)           0.000    31.319    filtro_variable/suma_int[3]_i_17_n_0
+    SLICE_X31Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    31.869 r  filtro_variable/suma_int_reg[3]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    31.869    filtro_variable/suma_int_reg[3]_i_9_n_0
+    SLICE_X31Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    31.983 r  filtro_variable/suma_int_reg[3]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    31.983    filtro_variable/suma_int_reg[3]_i_4_n_0
+    SLICE_X31Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.097 r  filtro_variable/suma_int_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    32.097    filtro_variable/suma_int_reg[3]_i_2_n_0
+    SLICE_X31Y80         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    32.275 r  filtro_variable/suma_int_reg[3]_i_1/CO[1]
+                         net (fo=32, routed)          1.780    34.055    filtro_variable/suma_int_reg1[3]
+    SLICE_X34Y76         LUT2 (Prop_lut2_I0_O)        0.329    34.384 r  filtro_variable/suma_int[2]_i_18/O
+                         net (fo=1, routed)           0.000    34.384    filtro_variable/suma_int[2]_i_18_n_0
+    SLICE_X34Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    34.917 r  filtro_variable/suma_int_reg[2]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    34.917    filtro_variable/suma_int_reg[2]_i_10_n_0
+    SLICE_X34Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.034 r  filtro_variable/suma_int_reg[2]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    35.034    filtro_variable/suma_int_reg[2]_i_5_n_0
+    SLICE_X34Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.151 r  filtro_variable/suma_int_reg[2]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    35.151    filtro_variable/suma_int_reg[2]_i_2_n_0
+    SLICE_X34Y79         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.252    35.403 r  filtro_variable/suma_int_reg[2]_i_1/CO[2]
+                         net (fo=34, routed)          1.903    37.306    filtro_variable/suma_int_reg1[2]
+    SLICE_X33Y72         LUT3 (Prop_lut3_I0_O)        0.310    37.616 r  filtro_variable/suma_int[1]_i_23/O
+                         net (fo=1, routed)           0.000    37.616    filtro_variable/suma_int[1]_i_23_n_0
+    SLICE_X33Y72         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    38.166 r  filtro_variable/suma_int_reg[1]_i_16/CO[3]
+                         net (fo=1, routed)           0.000    38.166    filtro_variable/suma_int_reg[1]_i_16_n_0
+    SLICE_X33Y73         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.280 r  filtro_variable/suma_int_reg[1]_i_11/CO[3]
+                         net (fo=1, routed)           0.000    38.280    filtro_variable/suma_int_reg[1]_i_11_n_0
+    SLICE_X33Y74         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.394 r  filtro_variable/suma_int_reg[1]_i_6/CO[3]
+                         net (fo=1, routed)           0.009    38.403    filtro_variable/suma_int_reg[1]_i_6_n_0
+    SLICE_X33Y75         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.517 r  filtro_variable/suma_int_reg[1]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    38.517    filtro_variable/suma_int_reg[1]_i_2_n_0
+    SLICE_X33Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    38.631 r  filtro_variable/suma_int_reg[1]_i_1/CO[3]
+                         net (fo=36, routed)          0.000    38.631    filtro_variable/suma_int_reg1[1]
+    SLICE_X33Y76         FDRE                                         r  filtro_variable/suma_int_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        35.403ns  (logic 16.473ns (46.530%)  route 18.930ns (53.470%))
+  Logic Levels:           56  (CARRY4=42 FDRE=1 LUT2=7 LUT3=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          1.199    22.135    filtro_variable/suma_int_reg1[7]
+    SLICE_X36Y78         LUT3 (Prop_lut3_I0_O)        0.329    22.464 r  filtro_variable/suma_int[6]_i_17/O
+                         net (fo=1, routed)           0.000    22.464    filtro_variable/suma_int[6]_i_17_n_0
+    SLICE_X36Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.014 r  filtro_variable/suma_int_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    23.014    filtro_variable/suma_int_reg[6]_i_10_n_0
+    SLICE_X36Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.128 r  filtro_variable/suma_int_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    23.128    filtro_variable/suma_int_reg[6]_i_5_n_0
+    SLICE_X36Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.242 r  filtro_variable/suma_int_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    23.242    filtro_variable/suma_int_reg[6]_i_2_n_0
+    SLICE_X36Y81         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    23.492 r  filtro_variable/suma_int_reg[6]_i_1/CO[2]
+                         net (fo=26, routed)          1.743    25.234    filtro_variable/suma_int_reg1[6]
+    SLICE_X33Y79         LUT2 (Prop_lut2_I0_O)        0.313    25.547 r  filtro_variable/suma_int[5]_i_14/O
+                         net (fo=1, routed)           0.000    25.547    filtro_variable/suma_int[5]_i_14_n_0
+    SLICE_X33Y79         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    26.097 r  filtro_variable/suma_int_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    26.097    filtro_variable/suma_int_reg[5]_i_6_n_0
+    SLICE_X33Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.211 r  filtro_variable/suma_int_reg[5]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    26.211    filtro_variable/suma_int_reg[5]_i_2_n_0
+    SLICE_X33Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.325 r  filtro_variable/suma_int_reg[5]_i_1/CO[3]
+                         net (fo=28, routed)          1.576    27.901    filtro_variable/suma_int_reg1[5]
+    SLICE_X32Y78         LUT3 (Prop_lut3_I0_O)        0.124    28.025 r  filtro_variable/suma_int[4]_i_20/O
+                         net (fo=1, routed)           0.000    28.025    filtro_variable/suma_int[4]_i_20_n_0
+    SLICE_X32Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    28.575 r  filtro_variable/suma_int_reg[4]_i_13/CO[3]
+                         net (fo=1, routed)           0.000    28.575    filtro_variable/suma_int_reg[4]_i_13_n_0
+    SLICE_X32Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.689 r  filtro_variable/suma_int_reg[4]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    28.689    filtro_variable/suma_int_reg[4]_i_8_n_0
+    SLICE_X32Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.803 r  filtro_variable/suma_int_reg[4]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    28.803    filtro_variable/suma_int_reg[4]_i_3_n_0
+    SLICE_X32Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.917 r  filtro_variable/suma_int_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    28.917    filtro_variable/suma_int_reg[4]_i_2_n_0
+    SLICE_X32Y82         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    29.210 r  filtro_variable/suma_int_reg[4]_i_1/CO[0]
+                         net (fo=30, routed)          1.736    30.946    filtro_variable/suma_int_reg1[4]
+    SLICE_X31Y77         LUT2 (Prop_lut2_I0_O)        0.373    31.319 r  filtro_variable/suma_int[3]_i_17/O
+                         net (fo=1, routed)           0.000    31.319    filtro_variable/suma_int[3]_i_17_n_0
+    SLICE_X31Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    31.869 r  filtro_variable/suma_int_reg[3]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    31.869    filtro_variable/suma_int_reg[3]_i_9_n_0
+    SLICE_X31Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    31.983 r  filtro_variable/suma_int_reg[3]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    31.983    filtro_variable/suma_int_reg[3]_i_4_n_0
+    SLICE_X31Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.097 r  filtro_variable/suma_int_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    32.097    filtro_variable/suma_int_reg[3]_i_2_n_0
+    SLICE_X31Y80         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    32.275 r  filtro_variable/suma_int_reg[3]_i_1/CO[1]
+                         net (fo=32, routed)          1.780    34.055    filtro_variable/suma_int_reg1[3]
+    SLICE_X34Y76         LUT2 (Prop_lut2_I0_O)        0.329    34.384 r  filtro_variable/suma_int[2]_i_18/O
+                         net (fo=1, routed)           0.000    34.384    filtro_variable/suma_int[2]_i_18_n_0
+    SLICE_X34Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533    34.917 r  filtro_variable/suma_int_reg[2]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    34.917    filtro_variable/suma_int_reg[2]_i_10_n_0
+    SLICE_X34Y77         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.034 r  filtro_variable/suma_int_reg[2]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    35.034    filtro_variable/suma_int_reg[2]_i_5_n_0
+    SLICE_X34Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117    35.151 r  filtro_variable/suma_int_reg[2]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    35.151    filtro_variable/suma_int_reg[2]_i_2_n_0
+    SLICE_X34Y79         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.252    35.403 r  filtro_variable/suma_int_reg[2]_i_1/CO[2]
+                         net (fo=34, routed)          0.000    35.403    filtro_variable/suma_int_reg1[2]
+    SLICE_X34Y79         FDRE                                         r  filtro_variable/suma_int_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        32.275ns  (logic 15.125ns (46.863%)  route 17.150ns (53.137%))
+  Logic Levels:           51  (CARRY4=38 FDRE=1 LUT2=6 LUT3=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          1.199    22.135    filtro_variable/suma_int_reg1[7]
+    SLICE_X36Y78         LUT3 (Prop_lut3_I0_O)        0.329    22.464 r  filtro_variable/suma_int[6]_i_17/O
+                         net (fo=1, routed)           0.000    22.464    filtro_variable/suma_int[6]_i_17_n_0
+    SLICE_X36Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.014 r  filtro_variable/suma_int_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    23.014    filtro_variable/suma_int_reg[6]_i_10_n_0
+    SLICE_X36Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.128 r  filtro_variable/suma_int_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    23.128    filtro_variable/suma_int_reg[6]_i_5_n_0
+    SLICE_X36Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.242 r  filtro_variable/suma_int_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    23.242    filtro_variable/suma_int_reg[6]_i_2_n_0
+    SLICE_X36Y81         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    23.492 r  filtro_variable/suma_int_reg[6]_i_1/CO[2]
+                         net (fo=26, routed)          1.743    25.234    filtro_variable/suma_int_reg1[6]
+    SLICE_X33Y79         LUT2 (Prop_lut2_I0_O)        0.313    25.547 r  filtro_variable/suma_int[5]_i_14/O
+                         net (fo=1, routed)           0.000    25.547    filtro_variable/suma_int[5]_i_14_n_0
+    SLICE_X33Y79         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    26.097 r  filtro_variable/suma_int_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    26.097    filtro_variable/suma_int_reg[5]_i_6_n_0
+    SLICE_X33Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.211 r  filtro_variable/suma_int_reg[5]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    26.211    filtro_variable/suma_int_reg[5]_i_2_n_0
+    SLICE_X33Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.325 r  filtro_variable/suma_int_reg[5]_i_1/CO[3]
+                         net (fo=28, routed)          1.576    27.901    filtro_variable/suma_int_reg1[5]
+    SLICE_X32Y78         LUT3 (Prop_lut3_I0_O)        0.124    28.025 r  filtro_variable/suma_int[4]_i_20/O
+                         net (fo=1, routed)           0.000    28.025    filtro_variable/suma_int[4]_i_20_n_0
+    SLICE_X32Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    28.575 r  filtro_variable/suma_int_reg[4]_i_13/CO[3]
+                         net (fo=1, routed)           0.000    28.575    filtro_variable/suma_int_reg[4]_i_13_n_0
+    SLICE_X32Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.689 r  filtro_variable/suma_int_reg[4]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    28.689    filtro_variable/suma_int_reg[4]_i_8_n_0
+    SLICE_X32Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.803 r  filtro_variable/suma_int_reg[4]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    28.803    filtro_variable/suma_int_reg[4]_i_3_n_0
+    SLICE_X32Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.917 r  filtro_variable/suma_int_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    28.917    filtro_variable/suma_int_reg[4]_i_2_n_0
+    SLICE_X32Y82         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    29.210 r  filtro_variable/suma_int_reg[4]_i_1/CO[0]
+                         net (fo=30, routed)          1.736    30.946    filtro_variable/suma_int_reg1[4]
+    SLICE_X31Y77         LUT2 (Prop_lut2_I0_O)        0.373    31.319 r  filtro_variable/suma_int[3]_i_17/O
+                         net (fo=1, routed)           0.000    31.319    filtro_variable/suma_int[3]_i_17_n_0
+    SLICE_X31Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    31.869 r  filtro_variable/suma_int_reg[3]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    31.869    filtro_variable/suma_int_reg[3]_i_9_n_0
+    SLICE_X31Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    31.983 r  filtro_variable/suma_int_reg[3]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    31.983    filtro_variable/suma_int_reg[3]_i_4_n_0
+    SLICE_X31Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    32.097 r  filtro_variable/suma_int_reg[3]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    32.097    filtro_variable/suma_int_reg[3]_i_2_n_0
+    SLICE_X31Y80         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    32.275 r  filtro_variable/suma_int_reg[3]_i_1/CO[1]
+                         net (fo=32, routed)          0.000    32.275    filtro_variable/suma_int_reg1[3]
+    SLICE_X31Y80         FDRE                                         r  filtro_variable/suma_int_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        29.210ns  (logic 13.796ns (47.230%)  route 15.414ns (52.770%))
+  Logic Levels:           46  (CARRY4=34 FDRE=1 LUT2=5 LUT3=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          1.199    22.135    filtro_variable/suma_int_reg1[7]
+    SLICE_X36Y78         LUT3 (Prop_lut3_I0_O)        0.329    22.464 r  filtro_variable/suma_int[6]_i_17/O
+                         net (fo=1, routed)           0.000    22.464    filtro_variable/suma_int[6]_i_17_n_0
+    SLICE_X36Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.014 r  filtro_variable/suma_int_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    23.014    filtro_variable/suma_int_reg[6]_i_10_n_0
+    SLICE_X36Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.128 r  filtro_variable/suma_int_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    23.128    filtro_variable/suma_int_reg[6]_i_5_n_0
+    SLICE_X36Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.242 r  filtro_variable/suma_int_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    23.242    filtro_variable/suma_int_reg[6]_i_2_n_0
+    SLICE_X36Y81         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    23.492 r  filtro_variable/suma_int_reg[6]_i_1/CO[2]
+                         net (fo=26, routed)          1.743    25.234    filtro_variable/suma_int_reg1[6]
+    SLICE_X33Y79         LUT2 (Prop_lut2_I0_O)        0.313    25.547 r  filtro_variable/suma_int[5]_i_14/O
+                         net (fo=1, routed)           0.000    25.547    filtro_variable/suma_int[5]_i_14_n_0
+    SLICE_X33Y79         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    26.097 r  filtro_variable/suma_int_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    26.097    filtro_variable/suma_int_reg[5]_i_6_n_0
+    SLICE_X33Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.211 r  filtro_variable/suma_int_reg[5]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    26.211    filtro_variable/suma_int_reg[5]_i_2_n_0
+    SLICE_X33Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.325 r  filtro_variable/suma_int_reg[5]_i_1/CO[3]
+                         net (fo=28, routed)          1.576    27.901    filtro_variable/suma_int_reg1[5]
+    SLICE_X32Y78         LUT3 (Prop_lut3_I0_O)        0.124    28.025 r  filtro_variable/suma_int[4]_i_20/O
+                         net (fo=1, routed)           0.000    28.025    filtro_variable/suma_int[4]_i_20_n_0
+    SLICE_X32Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    28.575 r  filtro_variable/suma_int_reg[4]_i_13/CO[3]
+                         net (fo=1, routed)           0.000    28.575    filtro_variable/suma_int_reg[4]_i_13_n_0
+    SLICE_X32Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.689 r  filtro_variable/suma_int_reg[4]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    28.689    filtro_variable/suma_int_reg[4]_i_8_n_0
+    SLICE_X32Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.803 r  filtro_variable/suma_int_reg[4]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    28.803    filtro_variable/suma_int_reg[4]_i_3_n_0
+    SLICE_X32Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    28.917 r  filtro_variable/suma_int_reg[4]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    28.917    filtro_variable/suma_int_reg[4]_i_2_n_0
+    SLICE_X32Y82         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    29.210 r  filtro_variable/suma_int_reg[4]_i_1/CO[0]
+                         net (fo=30, routed)          0.000    29.210    filtro_variable/suma_int_reg1[4]
+    SLICE_X32Y82         FDRE                                         r  filtro_variable/suma_int_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[5]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        26.325ns  (logic 12.487ns (47.434%)  route 13.838ns (52.566%))
+  Logic Levels:           40  (CARRY4=29 FDRE=1 LUT2=5 LUT3=5)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          1.199    22.135    filtro_variable/suma_int_reg1[7]
+    SLICE_X36Y78         LUT3 (Prop_lut3_I0_O)        0.329    22.464 r  filtro_variable/suma_int[6]_i_17/O
+                         net (fo=1, routed)           0.000    22.464    filtro_variable/suma_int[6]_i_17_n_0
+    SLICE_X36Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.014 r  filtro_variable/suma_int_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    23.014    filtro_variable/suma_int_reg[6]_i_10_n_0
+    SLICE_X36Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.128 r  filtro_variable/suma_int_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    23.128    filtro_variable/suma_int_reg[6]_i_5_n_0
+    SLICE_X36Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.242 r  filtro_variable/suma_int_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    23.242    filtro_variable/suma_int_reg[6]_i_2_n_0
+    SLICE_X36Y81         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    23.492 r  filtro_variable/suma_int_reg[6]_i_1/CO[2]
+                         net (fo=26, routed)          1.743    25.234    filtro_variable/suma_int_reg1[6]
+    SLICE_X33Y79         LUT2 (Prop_lut2_I0_O)        0.313    25.547 r  filtro_variable/suma_int[5]_i_14/O
+                         net (fo=1, routed)           0.000    25.547    filtro_variable/suma_int[5]_i_14_n_0
+    SLICE_X33Y79         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    26.097 r  filtro_variable/suma_int_reg[5]_i_6/CO[3]
+                         net (fo=1, routed)           0.000    26.097    filtro_variable/suma_int_reg[5]_i_6_n_0
+    SLICE_X33Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.211 r  filtro_variable/suma_int_reg[5]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    26.211    filtro_variable/suma_int_reg[5]_i_2_n_0
+    SLICE_X33Y81         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    26.325 r  filtro_variable/suma_int_reg[5]_i_1/CO[3]
+                         net (fo=28, routed)          0.000    26.325    filtro_variable/suma_int_reg1[5]
+    SLICE_X33Y81         FDRE                                         r  filtro_variable/suma_int_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[6]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        23.492ns  (logic 11.396ns (48.511%)  route 12.096ns (51.489%))
+  Logic Levels:           36  (CARRY4=26 FDRE=1 LUT2=4 LUT3=5)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          1.199    22.135    filtro_variable/suma_int_reg1[7]
+    SLICE_X36Y78         LUT3 (Prop_lut3_I0_O)        0.329    22.464 r  filtro_variable/suma_int[6]_i_17/O
+                         net (fo=1, routed)           0.000    22.464    filtro_variable/suma_int[6]_i_17_n_0
+    SLICE_X36Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    23.014 r  filtro_variable/suma_int_reg[6]_i_10/CO[3]
+                         net (fo=1, routed)           0.000    23.014    filtro_variable/suma_int_reg[6]_i_10_n_0
+    SLICE_X36Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.128 r  filtro_variable/suma_int_reg[6]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    23.128    filtro_variable/suma_int_reg[6]_i_5_n_0
+    SLICE_X36Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    23.242 r  filtro_variable/suma_int_reg[6]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    23.242    filtro_variable/suma_int_reg[6]_i_2_n_0
+    SLICE_X36Y81         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    23.492 r  filtro_variable/suma_int_reg[6]_i_1/CO[2]
+                         net (fo=26, routed)          0.000    23.492    filtro_variable/suma_int_reg1[6]
+    SLICE_X36Y81         FDRE                                         r  filtro_variable/suma_int_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        20.936ns  (logic 10.039ns (47.951%)  route 10.897ns (52.049%))
+  Logic Levels:           31  (CARRY4=22 FDRE=1 LUT2=4 LUT3=4)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          1.214    19.607    filtro_variable/suma_int_reg1[8]
+    SLICE_X39Y78         LUT3 (Prop_lut3_I0_O)        0.373    19.980 r  filtro_variable/suma_int[7]_i_16/O
+                         net (fo=1, routed)           0.000    19.980    filtro_variable/suma_int[7]_i_16_n_0
+    SLICE_X39Y78         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    20.530 r  filtro_variable/suma_int_reg[7]_i_9/CO[3]
+                         net (fo=1, routed)           0.000    20.530    filtro_variable/suma_int_reg[7]_i_9_n_0
+    SLICE_X39Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.644 r  filtro_variable/suma_int_reg[7]_i_4/CO[3]
+                         net (fo=1, routed)           0.000    20.644    filtro_variable/suma_int_reg[7]_i_4_n_0
+    SLICE_X39Y80         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    20.758 r  filtro_variable/suma_int_reg[7]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    20.758    filtro_variable/suma_int_reg[7]_i_2_n_0
+    SLICE_X39Y81         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    20.936 r  filtro_variable/suma_int_reg[7]_i_1/CO[1]
+                         net (fo=24, routed)          0.000    20.936    filtro_variable/suma_int_reg1[7]
+    SLICE_X39Y81         FDRE                                         r  filtro_variable/suma_int_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[8]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        18.393ns  (logic 8.710ns (47.355%)  route 9.683ns (52.645%))
+  Logic Levels:           26  (CARRY4=18 FDRE=1 LUT2=4 LUT3=3)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          1.471    17.198    filtro_variable/suma_int_reg1[9]
+    SLICE_X37Y77         LUT3 (Prop_lut3_I0_O)        0.124    17.322 r  filtro_variable/suma_int[8]_i_15/O
+                         net (fo=1, routed)           0.000    17.322    filtro_variable/suma_int[8]_i_15_n_0
+    SLICE_X37Y77         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    17.872 r  filtro_variable/suma_int_reg[8]_i_8/CO[3]
+                         net (fo=1, routed)           0.000    17.872    filtro_variable/suma_int_reg[8]_i_8_n_0
+    SLICE_X37Y78         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    17.986 r  filtro_variable/suma_int_reg[8]_i_3/CO[3]
+                         net (fo=1, routed)           0.000    17.986    filtro_variable/suma_int_reg[8]_i_3_n_0
+    SLICE_X37Y79         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    18.100 r  filtro_variable/suma_int_reg[8]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    18.100    filtro_variable/suma_int_reg[8]_i_2_n_0
+    SLICE_X37Y80         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.293    18.393 r  filtro_variable/suma_int_reg[8]_i_1/CO[0]
+                         net (fo=22, routed)          0.000    18.393    filtro_variable/suma_int_reg1[8]
+    SLICE_X37Y80         FDRE                                         r  filtro_variable/suma_int_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/len_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/suma_int_reg[9]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        15.727ns  (logic 7.515ns (47.784%)  route 8.212ns (52.216%))
+  Logic Levels:           21  (CARRY4=14 FDRE=1 LUT2=4 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y71         FDRE                         0.000     0.000 r  filtro_variable/len_reg[0]/C
+    SLICE_X33Y71         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  filtro_variable/len_reg[0]/Q
+                         net (fo=16, routed)          1.729     2.185    filtro_variable/len_reg_n_0_[0]
+    SLICE_X40Y73         LUT2 (Prop_lut2_I0_O)        0.124     2.309 r  filtro_variable/suma_int[11]_i_45/O
+                         net (fo=1, routed)           0.000     2.309    filtro_variable/suma_int[11]_i_45_n_0
+    SLICE_X40Y73         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532     2.841 r  filtro_variable/suma_int_reg[11]_i_33/CO[3]
+                         net (fo=1, routed)           0.000     2.841    filtro_variable/suma_int_reg[11]_i_33_n_0
+    SLICE_X40Y74         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.112 r  filtro_variable/suma_int_reg[11]_i_32/CO[0]
+                         net (fo=7, routed)           1.300     4.412    filtro_variable/suma_int_reg[11]_i_32_n_3
+    SLICE_X41Y73         LUT3 (Prop_lut3_I0_O)        0.373     4.785 r  filtro_variable/suma_int[11]_i_38/O
+                         net (fo=1, routed)           0.000     4.785    filtro_variable/suma_int[11]_i_38_n_0
+    SLICE_X41Y73         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     5.335 r  filtro_variable/suma_int_reg[11]_i_25/CO[3]
+                         net (fo=1, routed)           0.000     5.335    filtro_variable/suma_int_reg[11]_i_25_n_0
+    SLICE_X41Y74         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.228     5.563 r  filtro_variable/suma_int_reg[11]_i_24/CO[2]
+                         net (fo=9, routed)           1.025     6.588    filtro_variable/suma_int_reg[11]_i_24_n_1
+    SLICE_X42Y75         LUT2 (Prop_lut2_I0_O)        0.313     6.901 r  filtro_variable/suma_int[11]_i_27/O
+                         net (fo=1, routed)           0.000     6.901    filtro_variable/suma_int[11]_i_27_n_0
+    SLICE_X42Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     7.434 r  filtro_variable/suma_int_reg[11]_i_15/CO[3]
+                         net (fo=11, routed)          1.151     8.586    filtro_variable/suma_int_reg[11]_i_15_n_0
+    SLICE_X41Y76         LUT2 (Prop_lut2_I0_O)        0.124     8.710 r  filtro_variable/suma_int[11]_i_22/O
+                         net (fo=1, routed)           0.000     8.710    filtro_variable/suma_int[11]_i_22_n_0
+    SLICE_X41Y76         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     9.260 r  filtro_variable/suma_int_reg[11]_i_11/CO[3]
+                         net (fo=1, routed)           0.000     9.260    filtro_variable/suma_int_reg[11]_i_11_n_0
+    SLICE_X41Y77         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     9.531 r  filtro_variable/suma_int_reg[11]_i_3/CO[0]
+                         net (fo=13, routed)          0.766    10.297    filtro_variable/suma_int_reg[11]_i_3_n_3
+    SLICE_X40Y75         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.829    11.126 r  filtro_variable/suma_int_reg[11]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    11.126    filtro_variable/suma_int_reg[11]_i_5_n_0
+    SLICE_X40Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.240 r  filtro_variable/suma_int_reg[11]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    11.240    filtro_variable/suma_int_reg[11]_i_2_n_0
+    SLICE_X40Y77         CARRY4 (Prop_carry4_CI_CO[1])
+                                                      0.178    11.418 r  filtro_variable/suma_int_reg[11]_i_1/CO[1]
+                         net (fo=16, routed)          1.202    12.619    filtro_variable/suma_int_reg1[11]
+    SLICE_X39Y75         LUT3 (Prop_lut3_I0_O)        0.329    12.948 r  filtro_variable/suma_int[10]_i_12/O
+                         net (fo=1, routed)           0.000    12.948    filtro_variable/suma_int[10]_i_12_n_0
+    SLICE_X39Y75         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    13.498 r  filtro_variable/suma_int_reg[10]_i_5/CO[3]
+                         net (fo=1, routed)           0.000    13.498    filtro_variable/suma_int_reg[10]_i_5_n_0
+    SLICE_X39Y76         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.612 r  filtro_variable/suma_int_reg[10]_i_2/CO[3]
+                         net (fo=1, routed)           0.000    13.612    filtro_variable/suma_int_reg[10]_i_2_n_0
+    SLICE_X39Y77         CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.250    13.862 r  filtro_variable/suma_int_reg[10]_i_1/CO[2]
+                         net (fo=18, routed)          1.039    14.901    filtro_variable/suma_int_reg1[10]
+    SLICE_X38Y79         LUT2 (Prop_lut2_I0_O)        0.313    15.214 r  filtro_variable/suma_int[9]_i_5/O
+                         net (fo=1, routed)           0.000    15.214    filtro_variable/suma_int[9]_i_5_n_0
+    SLICE_X38Y79         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513    15.727 r  filtro_variable/suma_int_reg[9]_i_1/CO[3]
+                         net (fo=20, routed)          0.000    15.727    filtro_variable/suma_int_reg1[9]
+    SLICE_X38Y79         FDRE                                         r  filtro_variable/suma_int_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[2][7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[3][7]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.218ns  (logic 0.141ns (64.541%)  route 0.077ns (35.459%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y72         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[2][7]/C
+    SLICE_X28Y72         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[2][7]/Q
+                         net (fo=3, routed)           0.077     0.218    filtro_variable/data_reg_reg[2][7]
+    SLICE_X28Y72         FDRE                                         r  filtro_variable/data_reg_reg[3][7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[6][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[7][2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.257ns  (logic 0.128ns (49.877%)  route 0.129ns (50.123%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y71         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[6][2]/C
+    SLICE_X32Y71         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  filtro_variable/data_reg_reg[6][2]/Q
+                         net (fo=3, routed)           0.129     0.257    filtro_variable/data_reg_reg[6][2]
+    SLICE_X35Y70         FDRE                                         r  filtro_variable/data_reg_reg[7][2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[6][0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[7][0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.261ns  (logic 0.141ns (54.037%)  route 0.120ns (45.963%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y69         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[6][0]/C
+    SLICE_X35Y69         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[6][0]/Q
+                         net (fo=3, routed)           0.120     0.261    filtro_variable/data_reg_reg[6][0]
+    SLICE_X35Y70         FDRE                                         r  filtro_variable/data_reg_reg[7][0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[6][3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[7][3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.263ns  (logic 0.141ns (53.636%)  route 0.122ns (46.364%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y69         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[6][3]/C
+    SLICE_X35Y69         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[6][3]/Q
+                         net (fo=3, routed)           0.122     0.263    filtro_variable/data_reg_reg[6][3]
+    SLICE_X35Y70         FDRE                                         r  filtro_variable/data_reg_reg[7][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[2][1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[3][1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.265ns  (logic 0.141ns (53.234%)  route 0.124ns (46.766%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y71         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[2][1]/C
+    SLICE_X28Y71         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[2][1]/Q
+                         net (fo=3, routed)           0.124     0.265    filtro_variable/data_reg_reg[2][1]
+    SLICE_X28Y71         FDRE                                         r  filtro_variable/data_reg_reg[3][1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[1][10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[2][10]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.265ns  (logic 0.141ns (53.151%)  route 0.124ns (46.849%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y74         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[1][10]/C
+    SLICE_X28Y74         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[1][10]/Q
+                         net (fo=2, routed)           0.124     0.265    filtro_variable/data_reg_reg[1][10]
+    SLICE_X28Y73         FDRE                                         r  filtro_variable/data_reg_reg[2][10]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[0][10]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[1][10]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.267ns  (logic 0.141ns (52.865%)  route 0.126ns (47.135%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y74         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[0][10]/C
+    SLICE_X28Y74         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[0][10]/Q
+                         net (fo=3, routed)           0.126     0.267    filtro_variable/data_reg_reg[0][10]
+    SLICE_X28Y74         FDRE                                         r  filtro_variable/data_reg_reg[1][10]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[2][8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[3][8]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.267ns  (logic 0.141ns (52.822%)  route 0.126ns (47.178%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y73         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[2][8]/C
+    SLICE_X28Y73         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[2][8]/Q
+                         net (fo=3, routed)           0.126     0.267    filtro_variable/data_reg_reg[2][8]
+    SLICE_X28Y73         FDRE                                         r  filtro_variable/data_reg_reg[3][8]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[0][0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[1][0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.270ns  (logic 0.141ns (52.278%)  route 0.129ns (47.722%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y71         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[0][0]/C
+    SLICE_X28Y71         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[0][0]/Q
+                         net (fo=3, routed)           0.129     0.270    filtro_variable/data_reg_reg[0][0]
+    SLICE_X31Y70         FDRE                                         r  filtro_variable/data_reg_reg[1][0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 filtro_variable/data_reg_reg[5][2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            filtro_variable/data_reg_reg[6][2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.272ns  (logic 0.141ns (51.911%)  route 0.131ns (48.089%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y71         FDRE                         0.000     0.000 r  filtro_variable/data_reg_reg[5][2]/C
+    SLICE_X32Y71         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  filtro_variable/data_reg_reg[5][2]/Q
+                         net (fo=3, routed)           0.131     0.272    filtro_variable/data_reg_reg[5][2]
+    SLICE_X32Y71         FDRE                                         r  filtro_variable/data_reg_reg[6][2]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
